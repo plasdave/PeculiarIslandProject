@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Environnement/shell_03.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Environnement/Chest_big.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Environnement/shell_02.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Environnement/Starfish.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Environnement/Rock_big.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Environnement/shell_01.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Environnement/Rock_small.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Environnement/grass.tscn" type="PackedScene" id=9]
+[ext_resource path="res://maps/Map_Beach.png" type="Texture" id=10]
+[ext_resource path="res://Environnement/Rock_tiny.tscn" type="PackedScene" id=11]
+
+[node name="World" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 10 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( -133.703, 5.04538 )
+
+[node name="bords" type="StaticBody2D" parent="YSort"]
+visible = false
+position = Vector2( 382.33, 124.867 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="YSort/bords"]
+polygon = PoolVector2Array( 62.6483, -14.0775, 70.2164, 79.2619, 9.67191, 92.7162, -1.2598, 155.783, -92.9174, 153.954, -90.3947, 323.815, -50.0317, 326.337, -55.0771, 442.381, -150.098, 443.222, -151.78, 321.292, -134.962, 325.496, -132.439, 154.795, -352.754, 156.476, -355.277, 93.4093, -400.685, 93.4093, -404.049, -60.4747, -303.141, -57.952, -303.141, -174.836, -285.02, -194.454, -274.454, -232.585, -276.573, -306.218, -366.782, -302.505, -365.284, -396.149, -311.99, -392.96, -308.244, -540.543, -276.78, -536.048, -273.034, -394.458, -171.149, -391.462, -165.156, -540.354, -134.44, -542.602, -132.193, -389.963, -22.8166, -394.458, -21.3183, -497.092, 16.1394, -497.841, 12.3936, -391.462, 71.5768, -393.709, 61.8378, -249.871, 62.5869, -153.98, -19.82, -133.772, -33.3047, -114.294, -82.7489, -113.526, -240.552, -302.509, -237.075, -225.818, -229.143, -56.1223, -82.8266, -52.9066, -82.8266, -94.1105, -55.0771, -92.4287, -41.6228, -73.0881, -16.3959, -102.519, 18.9217, -99.9968, 22.2853, -73.0881, 41.6259, -76.4517, 68.5346, -108.406, 198.873, -120.178, 218.214, -531.376, 60.9665, -641.534, -457.025, -611.261, -622.682, -51.2248, -521.774, 328.019, -314.073, 465.926, 14.7173, 465.926, 238.396, 217.862, 188.783, -121.019, 72.739, -105.883 )
+
+[node name="Player2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 387.354, 72.5246 )
+
+[node name="coquillages" type="YSort" parent="YSort"]
+
+[node name="StaticBody2D6" parent="YSort/coquillages" instance=ExtResource( 1 )]
+position = Vector2( 251.572, 76.1649 )
+
+[node name="StaticBody2D7" parent="YSort/coquillages" instance=ExtResource( 7 )]
+position = Vector2( 304.549, 112.323 )
+
+[node name="StaticBody2D8" parent="YSort/coquillages" instance=ExtResource( 4 )]
+position = Vector2( 286.049, 187.163 )
+
+[node name="StaticBody2D9" parent="YSort/coquillages" instance=ExtResource( 5 )]
+position = Vector2( 216.255, 237.617 )
+
+[node name="StaticBody2D10" parent="YSort/coquillages" instance=ExtResource( 5 )]
+position = Vector2( 377.707, 166.141 )
+
+[node name="StaticBody2D" parent="YSort/coquillages" instance=ExtResource( 5 )]
+position = Vector2( 270.072, 491.672 )
+
+[node name="StaticBody2D2" parent="YSort/coquillages" instance=ExtResource( 7 )]
+position = Vector2( 323.889, 544.648 )
+
+[node name="rocks" type="YSort" parent="YSort"]
+
+[node name="StaticBody2D4" parent="YSort/rocks" instance=ExtResource( 8 )]
+position = Vector2( 159.915, 92.1419 )
+
+[node name="StaticBody2D5" parent="YSort/rocks" instance=ExtResource( 8 )]
+position = Vector2( 140.574, 114.846 )
+
+[node name="Node2D" parent="YSort/rocks" instance=ExtResource( 6 )]
+position = Vector2( 461.804, 108.793 )
+
+[node name="Node2D2" parent="YSort/rocks" instance=ExtResource( 6 )]
+position = Vector2( 224.87, 182.209 )
+
+[node name="Node2D3" parent="YSort/rocks" instance=ExtResource( 6 )]
+position = Vector2( 46.0018, 128.815 )
+
+[node name="Node2D4" parent="YSort/rocks" instance=ExtResource( 6 )]
+position = Vector2( 225.538, 487.887 )
+
+[node name="StaticBody2D" parent="YSort/rocks" instance=ExtResource( 11 )]
+position = Vector2( 347.394, 183.805 )
+
+[node name="chests" type="YSort" parent="YSort"]
+
+[node name="StaticBody2D" parent="YSort/chests" instance=ExtResource( 2 )]
+position = Vector2( 385.275, 53.6086 )
+
+[node name="StaticBody2D2" parent="YSort/chests" instance=ExtResource( 2 )]
+position = Vector2( 312.117, 466.445 )
+
+[node name="grass" type="YSort" parent="YSort"]
+position = Vector2( 133.703, -5.04538 )
+
+[node name="StaticBody2D" parent="YSort/grass" instance=ExtResource( 9 )]
+position = Vector2( 215.413, 114.211 )
+
+[node name="Node2D" parent="YSort/grass" instance=ExtResource( 9 )]
+position = Vector2( 232.087, 159.77 )
+
+[node name="Node2D2" parent="YSort/grass" instance=ExtResource( 9 )]
+position = Vector2( 298.518, 157.248 )

@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://MainMenu/ComicSans.tres" type="DynamicFont" id=1]
+[ext_resource path="res://MainMenu/MainMenuBackground.jpg" type="Texture" id=2]
+[ext_resource path="res://MainMenu/icon.png" type="Texture" id=3]
+[ext_resource path="res://MainMenu/MainMenuButton.tres" type="Theme" id=4]
+[ext_resource path="res://MainMenu/Menu.gd" type="Script" id=6]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 724.0
+texture = ExtResource( 2 )
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1280.0
+margin_bottom = 724.0
+mouse_filter = 1
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+script = ExtResource( 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 1160.0
+margin_bottom = 644.0
+custom_constants/separation = 100
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+margin_right = 1040.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 164.0
+margin_right = 1040.0
+margin_bottom = 564.0
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 810.0
+margin_right = 1040.0
+margin_bottom = 400.0
+grow_vertical = 2
+custom_constants/separation = 20
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 230.0
+margin_bottom = 85.0
+hint_tooltip = "Start a new game"
+mouse_default_cursor_shape = 2
+size_flags_vertical = 0
+theme = ExtResource( 4 )
+shortcut_in_tooltip = false
+action_mode = 0
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 105.0
+margin_right = 230.0
+margin_bottom = 190.0
+hint_tooltip = "Start a new game"
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+disabled = true
+enabled_focus_mode = 0
+text = "Load Game"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 210.0
+margin_right = 230.0
+margin_bottom = 295.0
+hint_tooltip = "Start a new game"
+mouse_default_cursor_shape = 2
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 315.0
+margin_right = 230.0
+margin_bottom = 400.0
+hint_tooltip = "Start a new game"
+mouse_default_cursor_shape = 2
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+[connection signal="resized" from="MarginContainer" to="MarginContainer" method="_on_MarginContainer_resized"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/NewGameButton" to="MarginContainer" method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/SettingsButton" to="MarginContainer" method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/ExitButton" to="MarginContainer" method="_on_ExitButton_pressed"]
