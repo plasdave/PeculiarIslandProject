@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Action RPG Resources/Player/Player.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.16614
+height = 5.44631
+
+[node name="Player" type="KinematicBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.974044, -4.60131 )
+texture = ExtResource( 1 )
+hframes = 60
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0396841, 1.15401 )
+rotation = -1.5708
+shape = SubResource( 1 )
